@@ -2,12 +2,15 @@ import cv2
 
 print(cv2.__version__)
 vidcap = cv2.VideoCapture('myvideo1.mp4')
+#get video file myvideo1.mp4
 success,image = vidcap.read()
 count = 0
 success = True
 
 while success:
-  cv2.imwrite('myvideo1/frame%d.jpg' % count, image)     # save frame as JPEG file
+  cv2.imwrite('myvideo1/frame%d.jpg' % count, image)     
+  # save frame as JPEG file into the folder myvideo1
+  
   success,image = vidcap.read()
   print ('Read a new frame: ', success)
   count += 1
